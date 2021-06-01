@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 22px;
+    line-height: 1.5;
+    font-family: 'Alegreya', serif;
+    color: #eee;
+    background-color: #12121D;
+}
+
+#form input {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 12px;
+    padding: 12px;
+    outline: none;
+    background: #1A152F;
+    color: #eee;
+    width: 100%;
+    margin: 0 16px 0 0;
+    flex-grow: 1;
+}
+
+#form input::placeholder {
+    color: rgb(161, 161, 161);
+}
+
+.chat_rightside button {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #6C31FF;
+    font-weight: bold;
+    color: white;
+    box-shadow: 1px 1px rgb(82, 82, 82);
+    transition: background .3s ease;
+    cursor: pointer;
+}
+
+.chat_rightside button:hover {
+    background: #6C31FF;
+}
+
+.chat_rightside button:disabled {
+    cursor: not-allowed;
+    background: #956bff;
+}
+
+.message {
+    background: #4D38A2;
+    margin: 5px 0px 5px 0px;
+    color: #ffff;
+    padding: 5px;
+    /* width: 50vw; */
+    /* max-width: max-content; */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.message-text {
+    position: relative;
+    margin-left: 5px;
+    padding-right: 25px;
+}
+
+.message-info {
+    margin-left: 5px;
+}
+
+.message .time {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #ddd;
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.chat {
+    display: flex;
+}
+
+.chat_leftside {
+    height: 100vh;
+    background: #110F18;
+    width: 15vw;
+    overflow-y: scroll;
+    flex: 1;
+}
+
+.chat_rightside {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    flex: 5;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 25px 25px 0px 25px;
+}
+
+.write_message {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 16px;
+    padding: 25px;
+}
+
+.write_message form {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+.message_name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.message a {
+    color: #eee;
+}
+
+.join {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #6c31ff, #4034c6, #232d8c, #192153, #12121d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join_form {
+    box-shadow: 0px 0px 17px 1px #055961;
+    width: 23vw;
+    padding: 20px;
+    background-color: rgb(11, 165, 179);
+    border-radius: 10px;
+}
+
+.join_form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.join_form h1 {
+    font-size: 50px;
+}
+
+.join_form button {
+    display: block;
+    width: 100%;
+}
+
+.join_form input {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    outline: none;
+    color: #333;
+    width: 100%;
+    margin: 0 0px 20px 0;
+    transition: border-left 0.3s ease;
+}
+
+.join_form input:focus {
+    border-left: 5px solid rgb(0, 108, 117);
+}
+
+.join_form input::placeholder {
+    color: rgb(134, 134, 134);
+}
+
+.join_form button {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    background: #F69A5E;
+    font-weight: bold;
+    color: white;
+    box-shadow: 1px 1px 1px rgb(182, 182, 182);
+    transition: background .3s ease;
+}
+
+.join_form button:hover {
+    background: #ff7d27;
+}
+
+.room-title {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 4px;
+    padding: 15px 25px 0 25px;
+}
+
+.list-title {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 4px;
+    padding: 15px 25px 0 25px;
+}
+
+.users-list {
+    list-style-type: square;
+    font-weight: 300;
+    padding: 12px 24px 0 24px;
+}

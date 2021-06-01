@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#4589c9">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="chat">
+        <div id="sidebar" class="chat_leftside"></div>
+        <div class="chat_rightside">
+            <div id="messages"></div>
+            
+            <div class="write_message">
+                <form id="form">
+                    <input type="text" name="message" placeholder="Type a message..." maxlength="700" required autocomplete="off">
+                    <button type="submit">Send</button>
+                </form>
+                <button id="sendLocation">Send Location</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="messageTemplate" type="text/html">
+        <div class="message">
+            <p class="message-info">
+                <span class="message_name">{{ username }}</span>
+                <!-- <span class="message_meta">{{ createdAt }}</span> -->
+            </p>
+            <p class="message-text">
+                {{ message }}
+                <span class="time">{{ createdAt }}</span>
+            </p>
+        </div>
+    </script>
+
+    <script id="locationTemplate" type="text/html">
+        <div class="message">
+            <p class="message-info">
+                <span class="message_name">{{ username }}</span>
+                <!-- <span class="message_meta">{{ createdAt }}</span> -->
+            </p>
+            <p class="message-text">
+                <a href="{{ locationURL }}" target="_blank">My Current Location</a>
+                <span class="time">{{ createdAt }}</span>
+            </p>
+        </div>
+    </script>
+
+    <script id="leftsideTemplate" type="text/html">
+        <h2 class="room-title">{{ room }}</h2>
+        <h3 class="list-title">Users:</h3>
+        <ul class="users-list">
+            {{ #users }}
+                <li>{{ username }}</li>
+            {{ /users }}
+        </ul>
+    </script>
+    
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
